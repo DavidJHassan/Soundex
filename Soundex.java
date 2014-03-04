@@ -6,23 +6,6 @@ import java.io.*;
 
 public class Soundex
 {
-	/*Helper function*/
-	public static int checkLoop(ArrayList<Condition> conditions, String currentChar)
-	{
-		int j = -1;
-		int i = 0;
-		for(Condition c : conditions)
-		{
-			if(currentChar.matches(c.condition))
-			{
-				j = i;
-				break;
-			}
-			i++;
-		}
-		return j;
-	}
-	
 	/*checks to see what pattern the current character matches and then lets the State Machine determine if such a transition exists. If it does the SM is now in a new state else a dead state */
 	public static int checkCondition(StateMachine SM, ArrayList<Condition> conditions, String currentChar)
 	{
